@@ -21,6 +21,7 @@ import com.abonnements.gestionAbonnements.repository.UsersRepository;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin(origins="http://localhost:4200",allowedHeaders="*")
 public class UsersController {
 	
 	@Autowired
@@ -28,6 +29,7 @@ public class UsersController {
 
 	@GetMapping
 	public List<Users> getAllUsers() {
+		System.err.println("getall()");
 	    return usersRepository.findAll();
 	}
 

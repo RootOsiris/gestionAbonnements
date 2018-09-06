@@ -10,8 +10,5 @@ import com.abonnements.gestionAbonnements.model.Users;
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Long>{
 	
-	@Modifying
-	@Query(value = "update Users u set u.etat = ? where u.id_user = ?", 
-	  nativeQuery = true)
-	int deleteUser(Long id_user);
+	
 }
