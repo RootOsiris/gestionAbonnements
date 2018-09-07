@@ -22,18 +22,13 @@ public class Structures implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Structure;
 
-    
     private String denomination;
     
-  
     private String code;
-
-    
-    private String description;
-    
+   
+    private String description;   
     
     private String adresse;
-
     
     private Long statut;
     

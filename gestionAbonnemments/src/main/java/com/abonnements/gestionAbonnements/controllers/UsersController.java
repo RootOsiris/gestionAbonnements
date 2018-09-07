@@ -28,8 +28,7 @@ public class UsersController {
     UsersRepository usersRepository;
 
 	@GetMapping
-	public List<Users> getAllUsers() {
-		System.err.println("getall()");
+	public List<Users> getAllUsers() {		
 	    return usersRepository.findAll();
 	}
 

@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/structures")
+@CrossOrigin(origins="http://localhost:4200",allowedHeaders="*")
 public class StructuresController {
 	@Autowired
 	StructuresRepository structuresRepository;
