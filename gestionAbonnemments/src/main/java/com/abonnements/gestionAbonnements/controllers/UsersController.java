@@ -31,10 +31,16 @@ public class UsersController {
 	public List<Users> getAllUsers() {		
 	    return usersRepository.findAll();
 	}
-
+	
 	@PostMapping
 	public Users createUser(@Valid @RequestBody Users user) {
 	    return usersRepository.save(user);
+	}
+	
+	@PostMapping("/login")
+	public Users login(@Valid @RequestBody Users user) {
+		Users user2=usersRepository.login(user.getLogin(), user.getMdp());
+	    return usersRepository.save(user2);
 	}
 
 
@@ -55,6 +61,7 @@ public class UsersController {
 	   Users user=usersRepository.getOne(id_User);
 		user.setEtat(false);
 	    return usersRepository.save(user);
+	
 	}
 
 	
