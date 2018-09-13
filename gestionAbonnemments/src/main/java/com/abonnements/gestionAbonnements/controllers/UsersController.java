@@ -1,9 +1,7 @@
 package com.abonnements.gestionAbonnements.controllers;
 
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,7 +37,7 @@ public class UsersController {
 	
 	@PostMapping("/login")
 	public Users login(@Valid @RequestBody Users user) {
-		Users user2=usersRepository.login(user.getLogin(), user.getMdp());
+		Users user2=usersRepository.login(user.getLogin(), user.getMdp()) ;
 	    return usersRepository.save(user2);
 	}
 

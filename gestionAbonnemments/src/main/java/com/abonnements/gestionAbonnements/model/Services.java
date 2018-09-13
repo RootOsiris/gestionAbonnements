@@ -15,15 +15,16 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, 
         allowGetters = true)
-public class Services implements Serializable {
-    @Id
+public class Services implements Serializable {   
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Service;
 
     @NotBlank
     private String nom;
     
-    private Long prixdebase;
+    private Long prixdebase; 
 
 	@NotBlank
     private String description;
@@ -32,6 +33,8 @@ public class Services implements Serializable {
     private Long id_Structure;
 
     private String type;
+    
+    private Boolean etat;
     
     @NotBlank
     private Long id_CreateUser;
@@ -97,6 +100,14 @@ public class Services implements Serializable {
 	public Long getId_CreateUser() {
 		return id_CreateUser;
 	}
+	
+	public Boolean getEtat() {
+		return etat;
+	}
+
+	public void setEtat(Boolean etat) {
+		this.etat = etat;
+	}
 
 	public void setId_CreateUser(Long id_CreateUser) {
 		this.id_CreateUser = id_CreateUser;
@@ -118,17 +129,19 @@ public class Services implements Serializable {
 		this.updatedAt = updatedAt;
 	}
 
-	public Services(@NotBlank String nom, Long prixdebase, @NotBlank String description, @NotBlank Long id_Structure,
-			String type, @NotBlank Long id_CreateUser, Date createdAt, Date updatedAt) {
-		this.nom = nom;
-		this.prixdebase = prixdebase;
-		this.description = description;
-		this.id_Structure = id_Structure;
-		this.type = type;
-		this.id_CreateUser = id_CreateUser;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
+	 public Services(@NotBlank String nom, Long prixdebase, @NotBlank String description,
+				@NotBlank Long id_Structure, String type, Boolean etat, @NotBlank Long id_CreateUser, Date createdAt,
+				Date updatedAt) {			
+			this.nom = nom;
+			this.prixdebase = prixdebase;
+			this.description = description;
+			this.id_Structure = id_Structure;
+			this.type = type;
+			this.etat = etat;
+			this.id_CreateUser = id_CreateUser;
+			this.createdAt = createdAt;
+			this.updatedAt = updatedAt;
+		}
 
 	public Services() {
 		
@@ -137,8 +150,10 @@ public class Services implements Serializable {
 	@Override
 	public String toString() {
 		return "Services [id_Service=" + id_Service + ", nom=" + nom + ", prixdebase=" + prixdebase + ", description="
-				+ description + ", id_Structure=" + id_Structure + ", type=" + type + ", id_CreateUser=" + id_CreateUser
-				+ ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
+				+ description + ", id_Structure=" + id_Structure + ", type=" + type + ", etat=" + etat
+				+ ", id_CreateUser=" + id_CreateUser + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
 	}
+
+	
     
 }
