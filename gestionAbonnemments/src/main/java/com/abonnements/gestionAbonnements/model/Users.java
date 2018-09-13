@@ -46,8 +46,6 @@ public class Users {
     
     private Boolean etat;
     
-    @Column(name = "id_CreateUser")
-    @CreatedBy
     private Long id_CreateUser;
 
     @Column(nullable = true, updatable = false)

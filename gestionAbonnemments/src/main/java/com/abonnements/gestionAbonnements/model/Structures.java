@@ -36,9 +36,6 @@ public class Structures implements Serializable {
     
     private Long id_Parent;
 
-   
-    @Column(name = "id_CreateUser")
-    @CreatedBy
     private Long id_CreateUser;
 
     @Column(nullable = false, updatable = false)

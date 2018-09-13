@@ -5,8 +5,8 @@ import com.abonnements.gestionAbonnements.model.Structures;
 import com.abonnements.gestionAbonnements.model.Users;
 import com.abonnements.gestionAbonnements.repository.AbonnementsRepository;
 import com.abonnements.gestionAbonnements.repository.StructuresRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;

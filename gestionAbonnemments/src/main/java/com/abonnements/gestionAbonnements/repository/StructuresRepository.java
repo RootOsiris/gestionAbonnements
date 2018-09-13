@@ -13,5 +13,5 @@ public interface StructuresRepository extends JpaRepository<Structures, Long>{
 	@Modifying
 	@Query(value = "update structures s set s.etat = ? where s.id_structure = ?", 
 	  nativeQuery = true)
-	int deleteUser(Long id_structure);
+	int deleteStructure(Long id_structure);
 }
